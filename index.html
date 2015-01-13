@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<title>Portafolio.la</title>
+	<link rel="stylesheet" href="estilo/normalize.css">
+	<link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body>
+	<header id="yo" class="Header">
+		<nav class="MainMenu">
+			<ul class="MainMenu-list">
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#yo">Yo</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#perfil">Perfil</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#trabajo">Trabajo</a>
+				</li>
+				<li class="MainMenu-item">
+					<a class="MainMenu-link" href="#contacto">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+		<figure class="Header-imageContainer">
+				<img src="img/avatar.jpg" alt="Imagen personal" class="Header-image" />
+				<figcaption clas="Header-imageDescription">
+					<a class="Header-link"href="http://twitter.com/GBurgoos" target="_blank">@GBurgoos</a>
+				</figcaption>
+				<p class="Header-name">Gonzalo Burgos</p>
+		</figure>
+	</header>
+	<section id="perfil" class="Profile">
+		<div class="u-containerDefault">
+			<h2 class="Profile-title u-title">Mi perfil</h2>
+			<p class="Profile-description">
+				Hola! Soy una persona apacionada por la tecnología, la web y todo su ambito. Lo que más me gusta es aprender nuevas tecnologías y como aportar a la gente.
+			</p>
+			<a class="Profile-link twitter" href="http://twitter.com/GBurgoos" target="_blank">@GBurgoos</a>
+			<a class="Profile-link facebook" href="http://facebook.com/GBurgoos" target="_blank">/GBurgoos</a>
+		</div>
+	</section>
+	<!-- <section class="Slider">
+		<div class="Slider-container">
+			<ul class="rslides">
+			  <li><img src="img/1.jpg" alt=""></li>
+			  <li><img src="img/2.jpg" alt=""></li>
+			  <li><img src="img/3.jpg" alt=""></li>
+			</ul>
+		</div>
+	</section> -->
+	<section id="trabajo" class="Work">
+		<div class="u-containerDefault">
+			<h2 class="Work-title u-title">Mi trabajo</h2>
+		</div>
+			<div class="Work-container u-containerDefault">
+				<article class="Work-item">
+					<figure class="Work-imageContainer">
+						<img class="Work-image" src="img/pandeazucar.png" alt="Logo de Pan de Azúcar Lodge" title="Pan de Azúcar Lodge" width="245" height="245">
+						<figcaption class="Work-description">Pan de Azúcar Lodge</figcaption>
+					</figure>
+				</article>
+				<article class="Work-item">
+				<figure class="Work-imageContainer">
+					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen">
+					<figcaption class="Work-description">Website de mejorando.la</figcaption>
+				</figure>
+			</article>
+			<article class="Work-item">
+				<figure class="Work-imageContainer">
+					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen">
+					<figcaption class="Work-description">Website de mejorando.la</figcaption>
+				</figure>
+			</article>
+			<article class="Work-item">
+				<figure class="Work-imageContainer">
+					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen">
+					<figcaption class="Work-description">Website de mejorando.la</figcaption>
+				</figure>
+			</article>
+			<article class="Work-item">
+				<figure class="Work-imageContainer">
+					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen">
+					<figcaption class="Work-description">Website de mejorando.la</figcaption>
+				</figure>
+			</article>
+			<article class="Work-item">
+				<figure class="Work-imageContainer">
+					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen">
+					<figcaption class="Work-description">Website de mejorando.la</figcaption>
+				</figure>
+			</article>
+		</div>
+	</section>
+	<footer id="contacto" class="Footer">
+		<div class="Footer-left">
+			<h3 class="Footer-title">Contacto</h3>
+		<p class="Footer-description">Si tienes una sugerencia o quieres trabajar conmigo ponte en contacto con este formulario</p>
+		</div>
+		<form class="Footer-form">
+			<input class="Footer-formInput" type="text"placeholder="Nombre" />
+			<input class="Footer-formInput" type="email" placeholder="Email"/>
+			<textarea class="Footer-textarea" placeholder="Motivo"></textarea>
+			<button class="Footer-button" type="submit">Contactarme</button>
+		</form>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+	  $(function() {
+	    $(".rslides").responsiveSlides();
+	  });
+	</script>
+</body>
+</html>
