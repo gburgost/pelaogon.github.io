@@ -1,3 +1,4 @@
+@import "nib"
 @import "slider.styl"
 @import "font.styl"
 
@@ -43,7 +44,22 @@
   background-size cover
   text-align center
   padding 1.2em 0
-
+  &-button
+    background white
+    border none
+    border-radius 50%
+    display none
+    height 40px
+    line-height 40px
+    outline 0
+    padding 0
+    position fixed
+    right 1em
+    top 1em
+    width 40px
+    z-index 3
+    &.is-active
+      display block
 .Header-imageContainer
   margin 0
 
@@ -85,6 +101,8 @@
     background #3e568d
   &.aboutme
     background #1a2528
+  &:before
+    margin-right .5em
 .Work
   margin-top 2em
   text-align center
@@ -107,10 +125,10 @@
   font-style italic
 
 .Footer
-  background-image url('../img/footer.jpg')
+  background-color #0EC3DE
   background-repeat no-repeat
   background-position center
-  background-size cover
+  image('../img/footer-mejorandola.jpg', w=1024px, h=343px)
   padding 2em 0
   text-align center
 
@@ -160,7 +178,7 @@
     &-link
       display block
 
-@media screen and (max-width: 828px)
+@media screen and (max-width: 767px)
   .Footer
     &-form
     display block
@@ -170,6 +188,18 @@
       box-sizing border-box
     &-left
       margin-right 0
+  .Header
+    margin-top 0
+  .MainMenu
+    height auto
+    left -200px
+    width 200px
+    transition .3s
+    &.is-active
+      left 0
+    &-item
+      display block
+
 
 
 

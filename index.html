@@ -9,7 +9,9 @@
 </head>
 <body>
 	<header id="yo" class="Header">
-		<nav class="MainMenu">
+		<button class="Header-button is-active icon-menu" id="showMenu"></button>
+		<button class="Header-button icon-menu" id="hideMenu"></button>
+		<nav class="MainMenu" id="menu">
 			<ul class="MainMenu-list">
 				<li class="MainMenu-item">
 					<a class="MainMenu-link" href="#yo">Yo</a>
@@ -43,8 +45,8 @@
 				<br>
 				Me gusta estar al día con las nuevas tecnologías, aprender cosas nuevas y aplicarlas en mi vida.
 			</p>
-			<a class="Profile-link twitter" href="http://twitter.com/GBurgoos" target="_blank"><span class="icon-twitter"></span> @GBurgoos</a>
-			<a class="Profile-link facebook" href="http://facebook.com/GBurgoos" target="_blank"><span class="icon-facebook"></span> /GBurgoos</a>
+			<a class="Profile-link twitter icon-twitter" href="http://twitter.com/GBurgoos" target="_blank">@GBurgoos</a>
+			<a class="Profile-link facebook icon-facebook" href="http://facebook.com/GBurgoos" target="_blank">/GBurgoos</a>
 			<a class="Profile-link aboutme" href="http://about.me/GonzaloBT" target="_blank">/GonzaloBT</a>
 		</div>
 	</section>
@@ -74,30 +76,30 @@
 					<figcaption class="Work-description">Metalúrgica Puerto Caldera</figcaption>
 				</figure>
 			</article>
-			<article class="Work-item">
+			<!-- <article class="Work-item">
 				<figure class="Work-imageContainer">
-					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen" width="240" height="240">
+					<img class="Work-image" src="img/front.png" alt="Esto es la descripcion de mi imagen" width="240" height="240">
 					<figcaption class="Work-description">Website de mejorando.la</figcaption>
 				</figure>
 			</article>
 			<article class="Work-item">
 				<figure class="Work-imageContainer">
-					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen" width="240" height="240">
+					<img class="Work-image" src="img/front.png" alt="Esto es la descripcion de mi imagen" width="240" height="240">
 					<figcaption class="Work-description">Website de mejorando.la</figcaption>
 				</figure>
 			</article>
 			<article class="Work-item">
 				<figure class="Work-imageContainer">
-					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen" width="240" height="240">
+					<img class="Work-image" src="img/front.png" alt="Esto es la descripcion de mi imagen" width="240" height="240">
 					<figcaption class="Work-description">Website de mejorando.la</figcaption>
 				</figure>
 			</article>
 			<article class="Work-item">
 				<figure class="Work-imageContainer">
-					<img class="Work-image" src="img/mejorandola.jpg" alt="Esto es la descripcion de mi imagen" width="240" height="240">
+					<img class="Work-image" src="img/front.png" alt="Esto es la descripcion de mi imagen" width="240" height="240">
 					<figcaption class="Work-description">Website de mejorando.la</figcaption>
 				</figure>
-			</article>
+			</article> -->
 		</div>
 	</section>
 	<footer id="contacto" class="Footer">
@@ -114,9 +116,40 @@
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/retina.min.js"></script>
+	<script src="js/hammer.min.js"></script>
 	<script>
 	  $(function() {
 	    $(".rslides").responsiveSlides();
+
+	    if(window.matchMedia("(max-width:768px)").matches){
+	    	var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
+
+			var showMenu = function(){
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			};
+
+			var hideMenu = function(){
+				$buttonHideMenu.classList.remove('is-active');
+				$buttonShowMenu.classList.add('is-active');
+				$menu.classList.remove('is-active');
+			};
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+
+			body.on('panright', showMenu);
+			body.on('panleft', hideMenu);
+	    }
 	  });
 	</script>
 </body>
