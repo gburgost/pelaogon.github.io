@@ -1,0 +1,151 @@
+@import "nib"
+@import "normalize.css"
+@import "slider.styl"
+@import "font.styl"
+@import url(http://fonts.googleapis.com/css?family=Courgette)
+
+.u-Container
+	width 90%;
+	max-width 1024px
+	margin 0 auto
+	position relative
+.MainMenu
+	position absolute
+	right 0
+	top 2.5em
+	z-index 4
+	&-list
+		margin 0
+		padding 0
+	&-item
+		display inline-block
+		text-transform uppercase
+		text-align center
+		height 50px
+		line-height 50px
+		list-style none
+		padding 0 .5em
+		cursor pointer
+		&:hover
+			border-bottom 5px solid #28713F
+	&-link
+		color #272822
+		text-decoration none
+
+.Header
+	box-shadow 0 0 20px black
+	background-image url('../img/isla_pascua.jpg')
+	background-repeat no-repeat
+	background-size cover
+	background-position center
+	position fixed
+	top 0
+	width 100%
+	z-index 5
+	&-logo
+		margin 1em 0
+	&-button
+		background white
+		box-shadow 0 0 10px black
+		border none
+		border-radius 50%
+		display none
+		height 40px
+		line-height 40px
+		outline 0
+		padding 0
+		position fixed
+		right 1em
+		bottom 1em
+		width 40px
+		z-index 1000
+
+.Slider
+	box-shadow 0 0 20px black
+	max-width 1024px
+	margin 12em auto
+	margin-bottom 0
+	position relative
+	&-titleContainer
+		background rgba(18, 168, 181, 0.8)
+		color white
+		position absolute
+		text-align left
+		bottom 0
+		width 80%
+		border-radius 0 100% 0 0
+		z-index 3
+	&-title
+		font-family 'Courgette' cursive
+		margin 0
+		padding-left .5em
+		font-size 4.5em
+		font-weight 300
+		text-shadow 0 0 5px black
+	&-title2
+		font-family 'Courgette' cursive
+		margin 0
+		padding-left .5em
+		font-size 2.5em
+		font-weight 300
+		text-shadow 0 0 5px black
+		margin-top 1em
+
+.Contenido
+	border-top 1px solid lightgray
+	margin-top 2em
+	margin-bottom 2em
+	&-redesButton
+		background #47639E
+		color white
+		border none
+		outline 0
+		padding .5em 1em
+		border-radius .5em
+		box-shadow 0 0 5px black
+	&-redesLink
+		color white
+		text-decoration none
+	&-redesTitle
+		font-weight 300
+		color #276F3E
+
+.Footer
+	background #53A6D2
+	padding .5em
+	border-radius .5em .5em 0 0
+	text-align center
+
+@media screen and (max-width: 767px)
+	.u-Container
+		position initial
+	.Header
+		margin-top 0
+		text-align center
+		padding 1px 0
+		&-button
+			&.is-active
+				display block
+		&-logoImage
+			width 100px
+	.MainMenu
+		background white
+		box-shadow 0 0 10px black
+		height auto
+		top 0
+		margin 0
+		right -200px
+		width 200px
+		transition .3s
+
+		&.is-active
+			right 0
+		&-item
+			display block
+	.Slider
+		margin-top 9em
+		&-title
+			font-size 2em
+		&-title2
+			font-size 1em
+
