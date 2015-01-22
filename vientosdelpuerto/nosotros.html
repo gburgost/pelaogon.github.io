@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Nosotros</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body>
+	<header class="Header">
+		<div class="u-Container">
+			<figure class="Header-logo">
+				<img class="Header-logoImage" width="150" src="img/logo.png" alt="Logo VDP">
+			</figure>
+			<button class="Header-button is-active icon-menu" id="showMenu"></button>
+			<button class="Header-button icon-menu" id="hideMenu"></button>
+			<nav class="MainMenu" id="menu">
+				<ul class="MainMenu-list">
+					<li class="MainMenu-item"><a class="MainMenu-link" href="index.html">Inicio</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="nosotros.html">Nosotros</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Agrupacion</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Galeria</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="Contenido-nosotros  u-Container">
+		<h1 class="Contenido-nosotrosTitle u-Titleh1">Nuestra Agrupación</h1>
+		<div class="Contenido-texto1">
+			<div class="Contenido-texto1Text">
+				<p class="Contenido-nosotrosTexto">
+					La “Agrupación de danzas folclóricas Vientos del Puerto”, fue constituida en mayo del año 2006, está integrada por jóvenes de enseñanza básica, media y universitaria, se ha caracterizado por cultivar los diferentes bailes de la zona sur, centro, norte e Isla de  Pascua, además   cuenta con un amplio repertorio de danzas latino americanas como por ejemplo Colombia, Perú, México y Argentina.
+				</p>
+			</div>
+			<figure class="Contenido-texto1Image">
+				<img class="Contenido-image" src="img/ejemplo1.jpg" width="300">
+			</figure>
+		</div>
+		<br>
+		<br>
+		<div class="Contenido-texto2">
+			<figure class="Contenido-texto2Image">
+					<img class="Contenido-image" src="img/ejemplo2.jpg" width="300">
+				</figure>
+			<div class="Contenido-texto2Text">
+				<p class="Contenido-nosotrosTexto">
+					“Vientos del Puerto”  durante su trayectoria se ha caracterizado por  participar en diferentes encuentros  folclóricos comunales, regionales y fuera de ella, además se debe destacar que, desde el año  2008  esta realizando un intercambio cultural con nuestro vecino país de Argentina,  donde ya ha representado en dos oportunidades a   nuestra región, siendo nombrados delegados culturales en  las Termas de Rio Hondo y  Simoca,  mostrando nuestras  danzas. “Vientos del Puerto” a realizado el año 2008 y 2009 el primer y segundo “Encuentro de integración folclórica entre Chile y Argentina, preparándose para realizar el tercer encuentro en febrero del año 2012.
+				</p>
+			</div>
+		</div>
+		<div class="Contenido-misionyvision">
+			<h1 class="Contenido-nosotrosTitle u-Titleh1">Misión</h1>
+			<p class="Contenido-nosotrosTexto">
+				La <strong>“Agrupación de Danzas Folcloricas Vientos del Puerto”</strong>, Trabaja para formar personas honorables con principios morales y culturales. Capaces de difundir y mostrar nuestro folclor nacional y latino americano en diferentes escenarios de nuestra comuna, región país y latinoamérica.
+			</p>
+			<h1 class="Contenido-nosotrosTitle u-Titleh1">Visión</h1>
+			<p class="Contenido-nosotrosTexto">
+				Ser reconocidos como una agrupación folclórica cultural con lidereasgo e iniciativa, difundiendo nuestras raíces folclórias y latinoaméricanas en nuestra comuna, región y país de Chile.
+			</p>
+		</div>
+	</section>
+	<footer class="Footer u-Container">
+		<p class="Footer-description">
+			Diseño y desarrollo por <a href="http://pelaogon.github.io" target="_blank">Pelagon</a>
+		</p>
+	</footer>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+
+	<script>
+	  $(function() {
+	    $(".rslides").responsiveSlides();
+
+	    if(window.matchMedia("(max-width:767px)").matches){
+	    	var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
+
+			var showMenu = function(){
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			};
+
+			var hideMenu = function(){
+				$buttonHideMenu.classList.remove('is-active');
+				$buttonShowMenu.classList.add('is-active');
+				$menu.classList.remove('is-active');
+			};
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+
+			// body.on('panleft', showMenu);
+			// body.on('panright', hideMenu);
+	    }
+	  });
+	</script>
+</body>
+</html>
