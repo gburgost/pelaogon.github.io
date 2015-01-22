@@ -13,6 +13,9 @@
 	font-family 'Courgette' cursive
 	color #12A8B5
 	font-size 45px
+	border-bottom 1px solid rgba(0,0,0,.1)
+	text-align center
+	font-weight 300
 
 
 .MainMenu
@@ -121,7 +124,6 @@
 		text-align center
 	&-nosotrosTitle
 		padding .5em
-		border-bottom 1px solid rgba(0,0,0,.1)
 	&-texto1Text
 		width 45%
 		display inline-block
@@ -144,6 +146,93 @@
 		line-height 1.5em
 	&-image
 		box-shadow 0 0 30px black
+.Timeline
+	&-main
+		margin-top 12em
+	&-lineaTiempo
+		margin: 30px 0 0 0;
+		padding: 0;
+		list-style: none;
+		position: relative;
+		&:before
+			content ''
+			position absolute
+			top 0
+			bottom 0
+			width 10px
+			background #6cbfee
+			left 20%
+			margin-left -10px
+			border-radius 20px
+	&-text
+		margin: 0 0 15px 25%;
+		background: #3594cb;
+		color: #fff;
+		padding: 2em;
+		font-size: 1.2em;
+		font-weight: 300;
+		line-height: 1.4;
+		position: relative;
+		border-radius: 5px;
+	&-title
+		margin-top: 0px;
+		padding: 0 0 10px 0;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+	&-containerImage
+		padding 0
+		margin 0
+		position absolute
+		left 15.9%
+	&-image
+		border-radius 100%
+
+.Timeline-lineaTiempo > li .Timeline-date {
+	display: inline-block;
+	padding 1.5em 0
+	position: absolute;
+	text-align right
+	font-style italic
+	font-size 14px
+}
+
+.Timeline-lineaTiempo > li .Timeline-date span {
+	display: block;
+	text-align: right;
+}
+
+.Timeline-lineaTiempo > li .Timeline-date span:first-child {
+	font-size: 0.9em;
+	color: #bdd0db;
+}
+
+.Timeline-lineaTiempo > li .Timeline-date span:last-child {
+	font-size: 2em;
+	color: #3594cb;
+}
+
+.Timeline-lineaTiempo > li:nth-child(odd) .Timeline-date span:last-child {
+	color: #6cbfee;
+}
+.Timeline-lineaTiempo > li:nth-child(odd) .Timeline-text {
+	background: #6cbfee;
+}
+/* The triangle */
+.Timeline-lineaTiempo > li .Timeline-text:after {
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #3594cb;
+	border-width: 10px;
+	top: 30px;
+}
+
+.Timeline-lineaTiempo > li:nth-child(odd) .Timeline-text:after {
+	border-right-color: #6cbfee
+}
 
 .Footer
 	background #A3A286
@@ -152,6 +241,25 @@
 	text-align center
 	&-description a
 		color #6E7554
+@media screen and (max-width: 1024px)
+	.Timeline
+		&-containerImage
+			left 15.5%
+
+	.Timeline-lineaTiempo > li .Timeline-date {
+		font-size 12px
+		width initial
+	}
+@media screen and (max-width: 960px)
+	.Timeline
+		&-containerImage
+			left 14%
+
+	.Timeline-lineaTiempo > li .Timeline-date {
+		font-size 10px
+		padding 2.5em 0
+		width initial
+	}
 
 @media screen and (max-width: 767px)
 	.u-Container
@@ -202,4 +310,49 @@
 		&-image
 			width 260px
 
+	.Timeline-lineaTiempo:before {
+		display: none;
+	}
 
+	.Timeline-lineaTiempo > li .Timeline-date {
+		width: 100%;
+		position: relative;
+		padding: 0 0 20px 0;
+	}
+
+	.Timeline-lineaTiempo > li .Timeline-date span {
+		text-align: left;
+	}
+
+	.Timeline-lineaTiempo > li .Timeline-text {
+		margin: 0 0 30px 0;
+		padding: 1em;
+		font-weight: 400;
+		font-size: 95%;
+	}
+
+	.Timeline-lineaTiempo > li .Timeline-text:after {
+		right: auto;
+		left: 20px;
+		border-right-color: transparent;
+		border-bottom-color: #3594cb;
+		top: -20px;
+	}
+
+	.Timeline-lineaTiempo > li:nth-child(odd) .Timeline-text:after {
+		border-right-color: transparent;
+		border-bottom-color: #6cbfee;
+	}
+
+	.Timeline-lineaTiempo > li .Timeline-containerImage {
+		position: relative;
+		float: right;
+		left: auto;
+		margin: -55px 5px 0 0px;
+	}
+	.Timeline
+		&-main
+			margin-top 9em
+		&-image
+			width 50px
+			height 50px

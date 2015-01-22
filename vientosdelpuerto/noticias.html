@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Noticias</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body>
+<header class="Header">
+		<div class="u-Container">
+			<figure class="Header-logo">
+				<img class="Header-logoImage" width="150" src="img/logo.png" alt="Logo VDP">
+			</figure>
+			<button class="Header-button is-active icon-menu" id="showMenu"></button>
+			<button class="Header-button icon-menu" id="hideMenu"></button>
+			<nav class="MainMenu" id="menu">
+				<ul class="MainMenu-list">
+					<li class="MainMenu-item"><a class="MainMenu-link" href="index.html">Inicio</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="nosotros.html">Nosotros</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Noticias</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Galeria</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="Timeline-main u-Container">
+		<h1 class="Timeline-Titleh1 u-Titleh1">Noticias</h1>
+		<ul class="Timeline-lineaTiempo">
+			<li class="Timeline-item">
+				<div class="Timeline-date">
+					<span>22/01/15</span>
+				</div>
+				<figure class="Timeline-containerImage">
+					<img class="Timeline-image" src="img/islaicon.jpg" alt="Isla de Pascua" width="75" height="75" />
+				</figure>
+				<div class="Timeline-text">
+					<h2 class="Timeline-title">Ricebean black-eyed pea</h2>
+					<p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish bush tomato ricebean black-eyed pea maize eggplant. Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato summer purslane salsify fennel horseradish dulse. Winter purslane garbanzo artichoke broccoli lentil corn okra silver beet celery quandong. Plantain salad beetroot bunya nuts black-eyed pea collard greens radish water spinach gourd chicory prairie turnip avocado sierra leone bologi.
+					</p>
+				</div>
+			</li>
+			<li class="Timeline-item">
+				<div class="Timeline-date">
+					<span>22/01/15</span>
+				</div>
+				<figure class="Timeline-containerImage">
+					<img class="Timeline-image" src="img/islaicon.jpg" alt="Isla de Pascua" width="75" height="75" />
+				</figure>
+				<div class="Timeline-text">
+					<h2 class="Timeline-title">Ricebean black-eyed pea</h2>
+					<p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish bush tomato ricebean black-eyed pea maize eggplant. Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato summer purslane salsify fennel horseradish dulse. Winter purslane garbanzo artichoke broccoli lentil corn okra silver beet celery quandong. Plantain salad beetroot bunya nuts black-eyed pea collard greens radish water spinach gourd chicory prairie turnip avocado sierra leone bologi.
+					</p>
+				</div>
+			</li>
+			<li class="Timeline-item"></li>
+			<li class="Timeline-item"></li>
+		</ul>
+
+
+	</section>
+	<footer class="Footer">
+		<p class="Footer-description">
+			<strong class="icon-code"></strong> by
+			<a href="http://pelaogon.github.io" target="_blank"><strong>Pelaogon</strong></a>
+		</p>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+
+	<script>
+	  $(function() {
+	    $(".rslides").responsiveSlides();
+
+	    if(window.matchMedia("(max-width:767px)").matches){
+	    	var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
+
+			var showMenu = function(){
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			};
+
+			var hideMenu = function(){
+				$buttonHideMenu.classList.remove('is-active');
+				$buttonShowMenu.classList.add('is-active');
+				$menu.classList.remove('is-active');
+			};
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+
+			// body.on('panleft', showMenu);
+			// body.on('panright', hideMenu);
+	    }
+	  });
+	</script>
+</body>
+</html>
