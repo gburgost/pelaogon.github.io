@@ -16,7 +16,13 @@
 	border-bottom 1px solid rgba(0,0,0,.1)
 	text-align center
 	font-weight 300
-
+.Regresar
+	position absolute
+	bottom 0
+	left 0
+	text-decoration none
+	text-transform uppercase
+	color #16210B
 
 .MainMenu
 	position absolute
@@ -90,14 +96,14 @@
 		padding-left .5em
 		font-size 4.5em
 		font-weight 300
-		box-shadow 0 0 5px rgba(0,0,0,.5)
+		text-shadow 0 0 10px rgba(0,0,0,.8)
 	&-title2
 		font-family 'Courgette' cursive
 		margin 0
 		padding-left .5em
 		font-size 2.5em
 		font-weight 300
-		box-shadow 0 0 5px rgba(0,0,0,.5)
+		text-shadow 0 0 10px rgba(0,0,0,.8)
 		margin-top 1em
 
 .Contenido
@@ -160,7 +166,7 @@
 			top 0
 			bottom 0
 			width 10px
-			background #6cbfee
+			background #11A6B3
 			left 20%
 			margin-left -10px
 			border-radius 20px
@@ -169,9 +175,8 @@
 		background: #558CC2;
 		color: #fff;
 		padding: 2em;
-		font-size: 1.2em;
 		font-weight: 300;
-		line-height: 1.4;
+		line-height: 1.5em;
 		position: relative;
 		border-radius: 5px;
 	&-title
@@ -212,7 +217,7 @@
 
 .Timeline-lineaTiempo > li .Timeline-date span:first-child {
 	font-size: 0.9em;
-	color: #9EC7F5;
+	color: #76B4F9;
 }
 
 .Timeline-lineaTiempo > li .Timeline-date span:last-child {
@@ -224,7 +229,7 @@
 	color: #6cbfee;
 }
 .Timeline-lineaTiempo > li:nth-child(odd) .Timeline-text {
-	background: #9EC7F5;
+	background: #76B4F9;
 }
 /* The triangle */
 .Timeline-lineaTiempo > li .Timeline-text:after {
@@ -244,6 +249,92 @@
 	border-right-color: #A4C9F3
 }
 
+
+.Galeria
+	margin-top 12em
+	margin-bottom 5em
+	text-align center
+	&-Container
+		margin-top 2em
+		display flex
+		flex-wrap wrap
+		justify-content space-around
+	&-containerImage
+		padding 0
+		margin 0 0 1em 0
+	&-item
+		display inline-block
+		max-width 15em
+	&-image
+		transition .5s
+		box-shadow 0 5px 15px rgba(0,0,0,.7)
+		&:hover
+			transition .5s
+			border-radius 100%
+
+	&-imageDescription
+		font-style italic
+		color #12A8B5
+		padding 1em 0
+	&-link
+		text-decoration none
+.Argentina
+	margin-top 12em
+	&-description
+		position relative
+		margin-top 5em
+		padding-bottom 5em
+		line-height 1.5em
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+.rslides_tabs
+	display block
+	margin 0 auto
+	text-align center
+	background #11A6B3
+	box-shadow 0 5px 10px rgba(0,0,0,.7)
+	border-radius 0 0 .5em .5em
+.rslides_tabs > li
+	display inline-block
+	text-decoration none
+	padding .7em
+	font-size 1.2em
+.rslides_tabs > li > a
+	color white
+	text-decoration none
+.rslides_here
+	background #76B4F9
+
 .Footer
 	background #A3A286
 	color #6E7554
@@ -251,6 +342,10 @@
 	text-align center
 	&-description a
 		color #6E7554
+
+
+
+
 @media screen and (max-width: 1024px)
 	.Timeline
 		&-containerImage
@@ -366,3 +461,8 @@
 		&-image
 			width 50px
 			height 50px
+	.Argentina
+		margin-top 9em
+	.rslides_tabs > li
+		font-size 1em
+

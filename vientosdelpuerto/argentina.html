@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Argentina</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body>
+	<header class="Header">
+		<div class="u-Container">
+			<figure class="Header-logo">
+				<img class="Header-logoImage" width="150" src="img/logo.png" alt="Logo VDP">
+			</figure>
+			<button class="Header-button is-active icon-menu" id="showMenu"></button>
+			<button class="Header-button icon-menu" id="hideMenu"></button>
+			<nav class="MainMenu" id="menu">
+				<ul class="MainMenu-list">
+					<li class="MainMenu-item"><a class="MainMenu-link" href="index.html">Inicio</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="nosotros.html">Nosotros</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="noticias.html">Noticias</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="galeria.html">Galeria</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="Argentina u-Container">
+		<h1 class="Argentina-title u-Titleh1">Argentina</h1>
+		<div class="Argentina-slider">
+			<div class="Slider-container">
+				<ul class="rslides">
+				  <li><img src="img/1.jpg" alt=""></li>
+				  <li><img src="img/2.jpg" alt=""></li>
+				  <li><img src="img/3.jpg" alt=""></li>
+				</ul>
+			</div>
+		</div>
+		<p class="Argentina-description">
+			La agrupación de danzas folclóricas Vientos del Puerto en sus presentaciones también a integrado bailes de paises hermanos como Argentina.
+			<br><br>
+			En sus vertientes musicales, el folklore argentino es muy variado en rítmicas, timbres, y letras relacionados directamente con el lugar de origen. La amplia extensión del territorio da como resultado muchos estilos que difieren de una región a otra. No sólo en la música y los instrumentos, sino que también involucra ceremonias, bailes típicos y conexión con el medio ambiente.
+			<a href="javascript:history.back()" class="Regresar icon-arrow-back">Regresar</a>
+		</p>
+
+	</section>
+	<footer class="Footer">
+		<p class="Footer-description">
+			<strong class="icon-code"></strong> by
+			<a href="http://pelaogon.github.io" target="_blank"><strong>Pelaogon</strong></a>
+		</p>
+	</footer>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+
+	<script>
+	  $(function() {
+	    $(".rslides").responsiveSlides({
+			auto: true,             // Boolean: Animate automatically, true or false
+			speed: 500,            // Integer: Speed of the transition, in milliseconds
+			timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+			pager: true,           // Boolean: Show pager, true or false
+			nav: false,             // Boolean: Show navigation, true or false
+			random: false,          // Boolean: Randomize the order of the slides, true or false
+			pause: true,           // Boolean: Pause on hover, true or false
+			pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+			prevText: "Previous",   // String: Text for the "previous" button
+			nextText: "Next",       // String: Text for the "next" button
+			maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+			navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+			manualControls: "",     // Selector: Declare custom pager navigation
+			namespace: "rslides",   // String: Change the default namespace used
+			before: function(){},   // Function: Before callback
+			after: function(){}     // Function: After callback
+			});
+
+	    if(window.matchMedia("(max-width:767px)").matches){
+	    	var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
+
+			var showMenu = function(){
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			};
+
+			var hideMenu = function(){
+				$buttonHideMenu.classList.remove('is-active');
+				$buttonShowMenu.classList.add('is-active');
+				$menu.classList.remove('is-active');
+			};
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+
+			// body.on('panleft', showMenu);
+			// body.on('panright', hideMenu);
+	    }
+	  });
+	</script>
+
+</body>
+</html>

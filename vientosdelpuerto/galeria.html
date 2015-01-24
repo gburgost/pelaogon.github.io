@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Galeria</title>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<link rel="stylesheet" href="estilo/estilo.css">
+</head>
+<body>
+	<header class="Header">
+		<div class="u-Container">
+			<figure class="Header-logo">
+				<img class="Header-logoImage" width="150" src="img/logo.png" alt="Logo VDP">
+			</figure>
+			<button class="Header-button is-active icon-menu" id="showMenu"></button>
+			<button class="Header-button icon-menu" id="hideMenu"></button>
+			<nav class="MainMenu" id="menu">
+				<ul class="MainMenu-list">
+					<li class="MainMenu-item"><a class="MainMenu-link" href="index.html">Inicio</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="nosotros.html">Nosotros</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="noticias.html">Noticias</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="galeria.html">Galeria</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="Galeria u-Container">
+		<h1 class="Galeria-mainTitle u-Container u-Titleh1">Galería</h1>
+		<div class="Galeria-Container u-Container">
+			<article class="Galeria-item">
+				<figure class="Galeria-containerImage">
+					<a class="Galeria-link" href="argentina.html">
+						<img src="img/argentina.jpg" alt="Argentina" class="Galeria-image" width="200" height="200">
+						<figcaption class="Galeria-imageDescription">Argentina</figcaption>
+					</a>
+				</figure>
+			</article>
+			<article class="Galeria-item">
+				<figure class="Galeria-containerImage">
+				<a class="Galeria-link" href="cueca.html">
+						<img src="img/cueca.jpg" alt="" class="Galeria-image" width="200" height="200">
+						<figcaption class="Galeria-imageDescription">Cueca</figcaption>
+					</a>
+				</figure>
+			</article>
+			<article class="Galeria-item">
+				<figure class="Galeria-containerImage">
+					<a class="Galeria-link" href="homenajes.html">
+						<img src="img/homenajes.jpg" alt="" class="Galeria-image" width="200" height="200">
+						<figcaption class="Galeria-imageDescription">Homenajes</figcaption>
+					</a>
+				</figure>
+			</article>
+			<article class="Galeria-item">
+				<figure class="Galeria-containerImage">
+					<a class="Galeria-link" href="sur.html">
+						<img src="img/sur.jpg" alt="" class="Galeria-image" width="200" height="200">
+						<figcaption class="Galeria-imageDescription">Sur</figcaption>
+					</a>
+				</figure>
+			</article>
+		</div>
+	</section>
+
+	<footer class="Footer">
+		<p class="Footer-description">
+			<strong class="icon-code"></strong> by
+			<a href="http://pelaogon.github.io" target="_blank"><strong>Pelaogon</strong></a>
+		</p>
+	</footer>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+
+	<script>
+	  $(function() {
+	    $(".rslides").responsiveSlides();
+
+	    if(window.matchMedia("(max-width:767px)").matches){
+	    	var $buttonShowMenu = document.getElementById('showMenu');
+			var $buttonHideMenu = document.getElementById('hideMenu');
+			var $menu = document.getElementById('menu');
+
+			var $body = document.querySelector('body');
+
+			var body = new Hammer($body);
+
+			var showMenu = function(){
+				$buttonShowMenu.classList.remove('is-active');
+				$buttonHideMenu.classList.add('is-active');
+				$menu.classList.add('is-active');
+			};
+
+			var hideMenu = function(){
+				$buttonHideMenu.classList.remove('is-active');
+				$buttonShowMenu.classList.add('is-active');
+				$menu.classList.remove('is-active');
+			};
+
+			$buttonShowMenu.addEventListener("click", showMenu);
+			$buttonHideMenu.addEventListener("click", hideMenu);
+
+
+			// body.on('panleft', showMenu);
+			// body.on('panright', hideMenu);
+	    }
+	  });
+	</script>
+</body>
+</html>
