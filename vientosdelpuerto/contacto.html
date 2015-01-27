@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Vientos del Puerto</title>
+	<title>Contacto</title>
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
+	<link rel="stylesheet" href="estilo/bootstrap.css">
 	<link rel="stylesheet" href="estilo/estilo.css">
 </head>
 <body>
@@ -25,40 +26,48 @@
 			</nav>
 		</div>
 	</header>
-	<section class="Slider">
-		<div class="Slider-container">
-			<ul class="rslides">
-			  <li><img src="img/portada2.jpg" alt=""></li>
-			  <li><img src="img/portada.jpg" alt=""></li>
-			</ul>
-		</div>
-		<figcaption class="Slider-titleContainer">
-			<h2 class="Slider-title2">Agrupacíon de Danzas Folcloricas</h2>
-			<h1 class="Slider-title">Vientos del Puerto</h1>
-		</figcaption>
+	<section class="Contacto u-Container">
+		<h1 class="Contacto-title u-Titleh1">Contacto</h1>
+		<form id="formulario" method="POST" action="return false" onsubmit="return false" class="Contacto-form">
+			<input type="text" id="nombre" class="Contacto-input" placeholder="Nombre" required />
+			<input type="email" id="correo" class="Contacto-input" placeholder="Correo" required/>
+			<textarea name="mensaje" id="mensaje" class="Contacto-textarea" placeholder="Mensaje" required></textarea>
+			<div id="alerta"></div>
+			<button name="limpiar" type="reset" class="Contacto-button btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</button>
+            <button class="Contacto-button btn btn-success" onclick="enviaCorreo(document.getElementById('nombre').value, document.getElementById('correo').value, document.getElementById('mensaje').value);"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Enviar</button>
+
+		</form>
+
 	</section>
-	<section class="Contenido u-Container">
-		<p class="Contenido-texto">
-			La <strong>“Agrupación de Danzas Folclóricas Vientos del Puerto”</strong>, fue constituida en mayo del año 2006, está integrada por jóvenes de enseñanza básica, media y universitaria, se ha caracterizado por cultivar los diferentes bailes de la zona sur, centro, norte e Isla de  Pascua, además   cuenta con un amplio repertorio de danzas latino americanas como por ejemplo Colombia, Perú, México y Argentina.
-		</p>
-		<div class="Contenido-redes">
-			<h2 class="Contenido-redesTitle">Siguenos en: </h2>
-			<button class="Contenido-redesButton facebook icon-facebook"><a class="Contenido-redesLink"href="https://www.facebook.com/vientosdelpuerto.vdp">/vientosdelpuerto.vdp</a></button>
-		</div>
-	</section>
+
 	<footer class="Footer">
 		<p class="Footer-description">
 			<strong class="icon-code"></strong> by
 			<a href="http://pelaogon.github.io" target="_blank"><strong>Pelaogon</strong></a>
 		</p>
 	</footer>
+
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/responsiveslides.min.js"></script>
 	<script src="js/hammer.min.js"></script>
 
 	<script>
 	  $(function() {
-	    $(".rslides").responsiveSlides();
+	  	function enviaCorreo(nombre, correo, mensaje)
+	    {
+	      $.ajax({
+	        url: "procesa.php",
+	        type: "POST",
+	        data: "nombre="+nombre+"&correo="+correo+"&telefono="+telefono+"&mensaje="+mensaje,
+	        success: function(resp){
+	       	  document.getElementById('formulario').reset();
+	          $('#alerta').fadeIn(1000).html(resp);
+
+	        }
+	      });
+	    }
 
 	    if(window.matchMedia("(max-width:767px)").matches){
 	    	var $buttonShowMenu = document.getElementById('showMenu');
@@ -90,5 +99,6 @@
 	    }
 	  });
 	</script>
+
 </body>
 </html>
