@@ -1,3 +1,9 @@
+<?php
+	include 'conexion.php';
+
+	$datos = mysqli_query($conexion, "SELECT * FROM noticia ORDER BY id_noticia DESC");
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +24,7 @@
 				<ul class="MainMenu-list">
 					<li class="MainMenu-item"><a class="MainMenu-link" href="index.html">Inicio</a></li>
 					<li class="MainMenu-item"><a class="MainMenu-link" href="nosotros.html">Nosotros</a></li>
-					<li class="MainMenu-item"><a class="MainMenu-link" href="noticias.html">Noticias</a></li>
+					<li class="MainMenu-item"><a class="MainMenu-link" href="noticias.php">Noticias</a></li>
 					<li class="MainMenu-item"><a class="MainMenu-link" href="galeria.html">Galeria</a></li>
 					<li class="MainMenu-item"><a class="MainMenu-link" href="contacto.html">Contacto</a></li>
 				</ul>
@@ -28,7 +34,31 @@
 	<section class="Timeline-main u-Container">
 		<h1 class="Timeline-Titleh1 u-Titleh1">Noticias</h1>
 		<ul class="Timeline-lineaTiempo">
-			<li class="Timeline-item">
+			<?php
+
+				while ($row = mysqli_fetch_array($datos)) {
+
+					$fechareal = $row['fecha'];
+					$ArrayFecha =explode('-', $fechareal);
+	    			$date = $ArrayFecha[2] ."/".$ArrayFecha[1] ."/".($ArrayFecha[0]-2000);
+
+					echo ("<li class='Timeline-item'>
+							<div class='Timeline-date'>
+								<span>".$date."</span>
+							</div>
+							<figure class='Timeline-containerImage'><img class='Timeline-image' src='".$row['icono']."' width='75' height='75'/>
+							</figure>
+							<div class='Timeline-text'>
+								<h2 class='Timeline-title'>".$row['titulo']."</h2>
+								<p class='Timeline-p'>
+									".$row['texto']."
+									<a class='Timeline-link' href='".$row['link']."' target='_blank'>Continuar leyendo...</a>
+								</p>
+							</div>
+						</li>");
+				}
+			?>
+			<!-- <li class="Timeline-item">
 				<div class="Timeline-date">
 					<span>27/01/13</span>
 				</div>
@@ -57,7 +87,7 @@
 				</div>
 			</li>
 			<li class="Timeline-item"></li>
-			<li class="Timeline-item"></li>
+			<li class="Timeline-item"></li> -->
 		</ul>
 
 
