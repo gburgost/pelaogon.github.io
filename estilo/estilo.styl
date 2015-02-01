@@ -2,14 +2,14 @@
 @import "slider.styl"
 @import "font.styl"
 
+p
+  font-weight 300
 .u-title
   color #00CCFF
-  border-bottom 2px dashed  #00CCFF
+  border-bottom 1px solid  #00CCFF
   font-weight normal
   text-align center
-  padding-bottom .5em
-
-
+  padding .5em 0
 .u-containerDefault
   max-width 800px
   margin 0 auto
@@ -37,13 +37,13 @@
   padding 0 1em
 
 .Header
-  margin-top 3.75em
-  background-image url('../img/portada1.jpg')
+  // margin-top 3.75em
+  background-image url('../img/portada.jpg')
   background-repeat no-repeat
   background-position center
   background-size cover
   text-align center
-  padding 1.2em 0
+  padding 10em 0
   &-button
     background white
     border none
@@ -76,21 +76,32 @@
   font-size 1.5em
   font-weight bold
   text-decoration none
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transform: scale(1) rotate(0);
+  &:hover
+    transform: scale(1.05) rotate(5deg);
+  &.twitter:hover
+    color #569de6
+  &.facebook:hover
+    color #3e568d
 
 .Header-name
   font-size 2em
   font-weight 300
   margin 0
-  border-bottom 1px solid rgba(255,255,255,.3)
 
 .Profile
 .Work
   text-align center
   padding 0 1em
+  margin-top -4.3em
   &-description
     color #515151
     line-height 2em
-
+.Profile-title
+  background white
+  border-radius 5px 5px 0 0
 .Profile-link
   background orange
   color white
@@ -100,14 +111,6 @@
   margin-right .5em
   display inline-block
   margin-bottom 1em
-  &.twitter
-    background #569de6
-  &.facebook
-    background #3e568d
-  &.aboutme
-    background #1a2528
-  &:before
-    margin-right .5em
 .Work
   margin-top 2em
   text-align center
@@ -133,20 +136,13 @@
   background-color #0EC3DE
   background-repeat no-repeat
   background-position center
-  image('../img/footer-mejorandola.jpg', w=1024px, h=343px)
+  image('../img/footer.jpg', w=1024px, h=343px)
   padding 2em 0
   text-align center
-
-.Footer-form
-  text-align center
-  display inline-block
-
-.Footer-left
-  display inline-block
-  max-width 32em
-  text-align center
-  vertical-align top
-  margin-right 5em
+  &-link
+    color #00CDFF
+    font-weight bold
+    text-decoration none
 
 .Footer-title
   color white
@@ -204,13 +200,4 @@
       left 0
     &-item
       display block
-
-
-
-
-
-
-
-
-
 
