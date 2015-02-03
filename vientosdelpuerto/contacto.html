@@ -54,13 +54,12 @@
 	<script src="js/hammer.min.js"></script>
 
 	<script>
-	  $(function() {
-	  	function enviaCorreo(nombre, correo, mensaje)
+	function enviaCorreo(nombre,correo,mensaje)
 	    {
 	      $.ajax({
 	        url: "procesa.php",
 	        type: "POST",
-	        data: "nombre="+nombre+"&correo="+correo+"&telefono="+telefono+"&mensaje="+mensaje,
+	        data: "nombre="+nombre+"&correo="+correo+"&mensaje="+mensaje,
 	        success: function(resp){
 	       	  document.getElementById('formulario').reset();
 	          $('#alerta').fadeIn(1000).html(resp);
@@ -68,7 +67,7 @@
 	        }
 	      });
 	    }
-
+	  $(function() {
 	    if(window.matchMedia("(max-width:767px)").matches){
 	    	var $buttonShowMenu = document.getElementById('showMenu');
 			var $buttonHideMenu = document.getElementById('hideMenu');
